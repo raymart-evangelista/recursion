@@ -9,10 +9,10 @@ def merge_sort(arr)
     # conquer-recursively sort the two smaller arrays
     merge_sort(b_arr)
     merge_sort(c_arr)
+
     # combine-merge the two sorted, smaller arrays into a single sorted array
     b_counter = 0
     c_counter = 0
-
     until b_counter >= b_arr.length || c_counter >= c_arr.length
       if b_arr[b_counter] < c_arr[c_counter]
         arr[b_counter+c_counter] = b_arr[b_counter]
@@ -22,7 +22,6 @@ def merge_sort(arr)
         c_counter += 1
       end
     end
-
     if b_counter >= b_arr.length
       # copy contents from c_arr to a_arr
       until c_counter >= c_arr.length
